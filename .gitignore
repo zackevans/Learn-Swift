@@ -17,7 +17,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# Can allow specific files
+# Can ignore specific files
 .swift
 
 # CocoaPods
