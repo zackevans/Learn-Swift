@@ -13,24 +13,22 @@ let index2 = Int(arc4random() % 9)
 let sentence = "The \(nounArray[6]) spilled her \(nounArray[7])."
 let  sillySentence = "The \(nounArray[index1]) jumped over the \(nounArray[index2])."
 //: Now try it yourself! Declare a new string that incorporates objects from the noun array above. Write one sentence that makes sense and one "Madlib" sentence with randomly chosen words. Feel free to add words to the noun array or declare a new array.
-let yourSentence = "TODO: Incorporate objects from the noun array here."
-let yourSillySentence = "TODO: Incorporate randomly chosen objects from the noun array here."
+let yourSentence = "The \(nounArray[index1]) spilled her \(nounArray[index2])."
+let yourSillySentence = "Random: \(nounArray[index1])"
 //: ### Exercise 2
 //: Recreate the shoutString by using the didYouKnowString as a stem.
 
 let didYouKnowString = "Did you know that the Swift String class comes with lots of useful methods?"
 let whisperString = "psst" + ", " + didYouKnowString.lowercaseString
-let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOTS OF USEFUL METHODS?"
-
-//Solution
-//let shoutString = "HEY!" + " " + didYouKnowString.uppercaseString
+//let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOTS OF USEFUL METHODS?"
+let shoutString = "HEY!" + " " + didYouKnowString.uppercaseString // didyouknowstring is turned all uppercase
 //: ### Exercise 3
 //: How many characters are in this string? Hint: One solution starts with casting the string as an array.
 let howManyCharacters = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
 
 //Solution
-let characterArray = Array(howManyCharacters)
-let thisMany = characterArray.count
+let characterArray = Array(howManyCharacters) // string is put into arry w/ out loop
+let thisMany = characterArray.count // count is the same as legnth method
 //: ### Exercise 4
 //: How many times does the letter "g" or "G" appear in the following string? Use a for-in loop to find out!
 let gString = "Gary's giraffe gobbled gooseberries greedily"
@@ -42,14 +40,22 @@ for Character in gString {
         count++
     }
 }
+
+print("There are \(count) G's in the string")
 //: ### Exercise 5
 //: Write a program that tells you whether or not this string contains the substring "tuna".
 let word = "fortunate"
+let word2 = "Forest"
 
 
 // Solution
-if word.rangeOfString("tuna") != nil {
+if word.rangeOfString("tuna") != nil {  // .rangeOfString is like .contains() 
     println("yes")
+}
+
+else // if tuna is not in the word
+{
+    println("No")
 }
 //: ### Exercise 6
 //: Write a program that deletes all occurrences of the word "like" in the following string.
@@ -57,11 +63,22 @@ let lottaLikes = "If like, you wanna learn Swift, like, you should build lots of
 
 // Solution
 let noLikes = lottaLikes.stringByReplacingOccurrencesOfString("like, ", withString: "")
+
+//My example 
+let dirtySentance = "Today the fucking moon fell out of the fucking sky"
+
+let cleanSentance = dirtySentance.stringByReplacingOccurrencesOfString("fucking", withString: "")
 //: ### Exercise 7
 // Example
 let sillyMonkeyString = "A monkey stole my iPhone"
 let newString = sillyMonkeyString.stringByReplacingOccurrencesOfString("monkey", withString: "🐒")
 let newerString = newString.stringByReplacingOccurrencesOfString("iPhone", withString: "📱")
+
+// My Example 
+let myString = "A boar rammed into the side of the car"
+
+let emojiString = myString.stringByReplacingOccurrencesOfString("boar", withString: "🐗")
+let finalEmojiString = emojiString.stringByReplacingOccurrencesOfString("car", withString: "🚗")
 
 //: Repeat the above string manipulation, but this time using a for-in loop.
 //: You can start off with this dictionary and string.
@@ -74,6 +91,15 @@ for (key, value) in dictionary {
 }
 
 println(newestString)
+
+
+// Test space
+
+for (key, value) in dictionary
+{
+    println("Key: \(key)  Value: \(value)")
+}
+
 //: ### Exercise 8
 //: Josie has been saving her pennies and has them all counted up. Write a program that, given a number of pennies, prints out how much money Josie has in dollars and cents.
 
