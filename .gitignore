@@ -17,9 +17,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# Can ignore specific files
-.swift
-
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
